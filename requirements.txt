@@ -1,0 +1,6 @@
+streamlit==1.33.0
+pandas
+nfl_data_py==0.3.1
+plotly==5.20.0
+jupyter==1.0.0
+numpy
