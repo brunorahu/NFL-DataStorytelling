@@ -139,8 +139,8 @@ st.markdown("""
     .toc-container {
         position: absolute;
         top: -30px;
-        left: -290px; /* Empuja el índice hacia el espacio en blanco de la izquierda */
-        width: 180px;
+        left: -240px;
+        width: 170px;
         border-left: 2px solid #eaeaea;
         padding-left: 1.0rem;
     }
@@ -162,7 +162,7 @@ st.markdown("""
     }
     
     /* Lo ocultamos en pantallas pequeñas para que no choque con el texto */
-    @media (max-width: 1350px) { .toc-container { display: none !important; } }
+    @media (max-width: 1150px) { .toc-container { display: none !important; } }
     </style>
     
     <div class="toc-container">
@@ -188,8 +188,8 @@ st.markdown("""
     .glossary-container {
         position: absolute;
         top: -50px;
-        right: -290px;
-        width: 180px;
+        right: -240px;
+        width: 170px;
         border-left: 2px solid #E31837;
         padding-left: 1.0rem;
     }
@@ -212,7 +212,7 @@ st.markdown("""
 
     :root:has(.g-term:hover) .glossary-default { display: none !important; }
 
-    @media (max-width: 1350px) { .glossary-container { display: none !important; } }
+    @media (max-width: 1150px) { .glossary-container { display: none !important; } }
     </style>
     <div class="glossary-container">
         <div class="glossary-title">Contexto</div>
