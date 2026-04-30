@@ -5,7 +5,7 @@
 **Enlace a la aplicación en vivo:** [Link de Streamlit Community Cloud](https://nfl-datastorytelling.streamlit.app/#prologo)
 
 ## Descripción del Proyecto
-Este proyecto de *Data Storytelling* analiza la reestructuración financiera y táctica de los Kansas City Chiefs tras la salida del receptor estrella Tyreek Hill en 2022. A través de visualizaciones interactivas, se demuestra cómo la ofensiva comandada por Andy Reid y Patrick Mahomes logró ganar campeonatos consecutivos optimizando el tope salarial y distribuyendo el balón mediante un esquema basado en la eficiencia, demostrando que el gasto de élite en receptores no es un requisito para construir una dinastía en la NFL moderna.
+Este proyecto de *Data Storytelling* analiza la reestructuración financiera y táctica de los Kansas City Chiefs tras la salida del receptor estrella Tyreek Hill en 2022. A través de visualizaciones interactivas, se demuestra cómo la ofensiva, comandada por Andy Reid y Patrick Mahomes, logró ganar campeonatos consecutivos optimizando el tope salarial y distribuyendo el balón mediante un esquema basado en la entropía, demostrando que el gasto de élite en receptores no es un requisito para construir una dinastía en la NFL moderna.
 
 ---
 
