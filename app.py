@@ -320,7 +320,7 @@ datos_salarios = pd.concat([top_5, kc_data])
 
 # Logos oficiales basados en las siglas
 logos = {
-    'LA': 'https://a.espncdn.com/i/teamlogos/nfl/500/lar.png',
+    'LAR': 'https://a.espncdn.com/i/teamlogos/nfl/500/lar.png',
     'NE': 'https://a.espncdn.com/i/teamlogos/nfl/500/ne.png',
     'NYG': 'https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png',
     'LAC': 'https://a.espncdn.com/i/teamlogos/nfl/500/lac.png',
