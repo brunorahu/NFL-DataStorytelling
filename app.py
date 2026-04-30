@@ -32,25 +32,24 @@ st.markdown(
     /* Eliminar el espacio en blanco superior por defecto de Streamlit */
     [data-testid="block-container"] { padding-top: 0rem !important; }
     [data-testid="stAppViewContainer"] { background-color: "white"; font-family: 'Source Serif 4', Georgia, serif; }
-    /* --- CORRECCIÓN DE TEXTO GENERAL --- */
+    /* --- Texto general --- */
     div[data-testid="stMarkdownContainer"] p, div[data-testid="stMarkdownContainer"] li { font-family: 'Source Serif 4', Georgia, serif !important; font-size: 1.15rem !important; line-height: 1.85 !important; color: #1a1a1a !important; font-weight: 300 !important; }
-    /* --- CORRECCIÓN DE TÍTULOS --- */
+    /* --- Títulos --- */
     div[data-testid="stMarkdownContainer"] h1, div[data-testid="stMarkdownContainer"] h2, div[data-testid="stMarkdownContainer"] h3, div[data-testid="stMarkdownContainer"] h4 { font-family: 'Playfair Display', Georgia, serif !important; color: #1a1a1a !important; letter-spacing: -0.02em !important; }
     hr { border-top: 2px solid #1a1a1a; margin: 3rem 0 2rem; opacity: 0.15; }
-    /* --- PULL QUOTE --- */
+    /* --- Quote --- */
     .pull-quote { border-left: 5px solid #FFB81C; padding: 0.8rem 1.5rem; margin: 2rem 0; background: rgba(255, 244, 206, 0.4); border-radius: 0 4px 4px 0; }
     .pull-quote p { font-family: 'Playfair Display', serif !important; font-size: 1.3rem !important; font-style: italic !important; color: #1a1a1a !important; margin: 0 !important; }
-    /* --- KPIS Y MÉTRICAS (Dimensiones homogéneas) --- */
+    /* ---kpis y métricas --- */
     [data-testid="stMetric"] { background: #fff; border-radius: 4px; padding: 1rem 1.2rem; border-left: 4px solid #E31837; box-shadow: 0 2px 8px rgba(0,0,0,0.06); height: 100% !important; min-height: 140px; }
     [data-testid="stMetricValue"] { font-family: 'Playfair Display', serif !important; font-size: 1.7rem !important; }
-    /* Forzar que el título del KPI baje de renglón atacando todas sus capas internas (*) */
     [data-testid="stMetricLabel"], [data-testid="stMetricLabel"] * { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; line-height: 1.3 !important; }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Carga de datos
+# Carga de datos optimizada
 @st.cache_data
 def cargar_datos():
     df_pases = pd.read_csv('data/processed/nfl_storytelling_final.csv')
@@ -82,8 +81,6 @@ st.markdown(
         margin-top: -7rem; 
         padding: 2.5rem calc(50vw - 425px); 
         width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
-        
-        /* NUEVO: Colocamos el banner en la capa más alta para que oculte el índice al inicio */
         z-index: 200; 
     }}
     .hero-kicker {{ font-family: 'Source Serif 4', serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.2em; color: #FFB81C; margin-bottom: 0.5rem; }}
@@ -127,15 +124,15 @@ st.markdown("""
 # Índice
 st.markdown("""
     <style>
-    /* 1. Hacemos que el contenedor invisible de Streamlit sea el "pegajoso" */
+    /* Hacemos que el contenedor invisible de Streamlit sea el "pegajoso" */
     div[data-testid="stElementContainer"]:has(.toc-container),
     div.element-container:has(.toc-container) {
         position: sticky !important;
-        top: 150px !important; /* Dónde se detiene al hacer scroll hacia abajo */
+        top: 150px !important; /* Scroll hacia abajo */
         z-index: 100;
     }
 
-    /* 2. El índice lo "empujamos" limpiamente hacia el margen izquierdo del texto */
+    /* En el margen izquierdo del texto */
     .toc-container {
         position: absolute;
         top: -30px;
@@ -145,9 +142,13 @@ st.markdown("""
         padding-left: 1.0rem;
     }
 
-    .toc-title { font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.6rem; margin-bottom: 1rem; color: #1a1a1a; }
+    .toc-title {
+        font-family: 'Playfair Display', serif; 
+        font-weight: bold; font-size: 1.6rem; 
+        margin-bottom: 1rem; color: #1a1a1a;
+    }
     
-    /* Mantenemos tu color gris y el efecto rojo al pasar el ratón */
+    /* Mantenemos el color gris y el efecto rojo al pasar el ratón */
     .toc-container a.toc-link {
         display: block; 
         color: #8c8c8c !important; 
@@ -161,7 +162,7 @@ st.markdown("""
         padding-left: 5px; margin-left: -1rem; font-weight: 600; 
     }
     
-    /* Lo ocultamos en pantallas pequeñas para que no choque con el texto */
+    /* Para pantallas pequeñas ocultamos esta sección para que no choque con el texto */
     @media (max-width: 1150px) { .toc-container { display: none !important; } }
     </style>
     
@@ -201,7 +202,6 @@ st.markdown("""
     .glossary-def b { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #E31837; display:block; margin-bottom:0.3rem;}
     @keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
 
-    /* Lógica de visualización (Añadido term-wr) */
     :root:has(#term-hill:hover) .def-hill,
     :root:has(#term-reid:hover) .def-reid,
     :root:has(#term-mahomes:hover) .def-mahomes,
@@ -516,7 +516,7 @@ delta_val_3 = porcentaje_top3 - pct_top3_otra
 clase_delta_1 = "delta-positivo" if delta_val_1 > 0 else "delta-negativo"
 clase_delta_3 = "delta-positivo" if delta_val_3 > 0 else "delta-negativo"
 
-# HTML y CSS inyectado
+# HTML y CSS inyectado para las métricas KPIs
 html_kpis = f"""
 <style>
 .kpi-row {{ display: flex; gap: 15px; margin-bottom: 2rem; justify-content: space-between; }}
